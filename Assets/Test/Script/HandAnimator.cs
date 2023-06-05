@@ -90,4 +90,11 @@ public sealed class HandAnimator : MonoBehaviour
     }
 
     #endregion
+
+
+    // これ多分　thumb の　座標
+    private void Update() {
+      var ptest = _pipeline.GetKeyPoint(BonePairs[0].Item1);
+      Debug.Log(ptest);
+    }
 }
