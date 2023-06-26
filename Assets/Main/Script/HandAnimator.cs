@@ -5,6 +5,13 @@ using MediaPipe.HandPose;
 
 public sealed class HandAnimator : MonoBehaviour
 {
+    public Vector3 Thumb_0, Thumb_1, Thumb_2, Thumb_3, Thumb_4;
+    public Vector3 Index_0, Index_1, Index_2;
+    public Vector3 Middle_0, Middle_1, Middle_2;
+    public Vector3 Ring_0, Ring_1, Ring_2;
+    public Vector3 Pinky_0, Pinky_1, Pinky_2;
+    public Vector3 Palm_0, Palm_1, Palm_2, Palm_3, Palm_4;
+
     #region Editable attributes
 
     [SerializeField] ImageSource _source = null;
@@ -94,7 +101,31 @@ public sealed class HandAnimator : MonoBehaviour
 
     // これ多分　thumb の　座標
     private void Update() {
-      var ptest = _pipeline.GetKeyPoint(BonePairs[0].Item1);
-      Debug.Log(ptest);
+      Thumb_0 = _pipeline.GetKeyPoint(BonePairs[0].Item1);
+      Thumb_1 = _pipeline.GetKeyPoint(BonePairs[1].Item1);
+      Thumb_2 = _pipeline.GetKeyPoint(BonePairs[2].Item1);
+      Thumb_3 = _pipeline.GetKeyPoint(BonePairs[3].Item1);
+      Thumb_4 = _pipeline.GetKeyPoint(BonePairs[4].Item1);
+
+      Index_0 = _pipeline.GetKeyPoint(BonePairs[5].Item1);
+      Index_1 = _pipeline.GetKeyPoint(BonePairs[6].Item1);
+      Index_2 = _pipeline.GetKeyPoint(BonePairs[7].Item1);
+
+      Middle_0 = _pipeline.GetKeyPoint(BonePairs[8].Item1);
+      Middle_1 = _pipeline.GetKeyPoint(BonePairs[9].Item1);
+      Middle_2 = _pipeline.GetKeyPoint(BonePairs[10].Item1);
+      
+      Ring_0 = _pipeline.GetKeyPoint(BonePairs[11].Item1);
+      Ring_1 = _pipeline.GetKeyPoint(BonePairs[12].Item1);
+      Ring_2 = _pipeline.GetKeyPoint(BonePairs[13].Item1);
+
+      Pinky_0 = _pipeline.GetKeyPoint(BonePairs[14].Item1);
+      Pinky_1 = _pipeline.GetKeyPoint(BonePairs[15].Item1);
+      Pinky_2 = _pipeline.GetKeyPoint(BonePairs[16].Item1);
+
+
+
+      // GameObject testobject = Instantiate(collisionPrefab);
+      // testobject.transform.position = ptest;
     }
 }
