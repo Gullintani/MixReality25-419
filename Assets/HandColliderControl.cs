@@ -12,6 +12,8 @@ public class HandColliderControl : MonoBehaviour
     // public GameObject Palm_0, Palm_1, Palm_2, Palm_3, Palm_4;
 
     public HandAnimator JointData;
+
+    public GameObject SteeringWheel;
     // Start is called before the first frame update
     void Start()
     {
@@ -42,5 +44,12 @@ public class HandColliderControl : MonoBehaviour
         Pinky_0_Collider.transform.position = JointData.Pinky_0;
         Pinky_1_Collider.transform.position = JointData.Pinky_1;
         Pinky_2_Collider.transform.position = JointData.Pinky_2;
+
+        // Quaternion sourceRotation = Index_2_Collider.transform.rotation;
+        // Vector3 sourceEulerAngles = sourceRotation.eulerAngles;
+        // Debug.Log(sourceEulerAngles);
+        // Quaternion newRotation = Quaternion.Euler(0f, sourceEulerAngles.y, 0f);
+        // SteeringWheel.transform.rotation = newRotation;
+        Debug.Log(Thumb_0_Collider.transform.position);
     }
 }
