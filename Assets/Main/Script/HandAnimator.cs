@@ -11,16 +11,14 @@ public sealed class HandAnimator : MonoBehaviour
     public Vector3 Ring_0, Ring_1, Ring_2;
     public Vector3 Pinky_0, Pinky_1, Pinky_2;
     public Vector3 Palm_0, Palm_1, Palm_2, Palm_3, Palm_4;
-<<<<<<< Updated upstream
 
-=======
     public GameObject steeringWheel;
     public GameObject Car;
     public Vector3 CarSpeed = new Vector3(0f, 0f, -0.01f);
     public float preangle = 0f;
     public float angle;
     //float angle;
->>>>>>> Stashed changes
+
     #region Editable attributes
 
     [SerializeField] ImageSource _source = null;
@@ -107,6 +105,10 @@ public sealed class HandAnimator : MonoBehaviour
 
     #endregion
 
+    public static float Vector2ToAngle(Vector2 vector)
+    {
+        return Mathf.Atan2(vector.y, vector.x) * Mathf.Rad2Deg;
+    }
 
     // これ多分　thumb の　座標
     private void Update() {
@@ -132,8 +134,7 @@ public sealed class HandAnimator : MonoBehaviour
       Pinky_1 = _pipeline.GetKeyPoint(BonePairs[15].Item1);
       Pinky_2 = _pipeline.GetKeyPoint(BonePairs[16].Item1);
 
-<<<<<<< Updated upstream
-=======
+
       // Debug.Log(Thumb_0);
         //Vector2 hand = new Vector2(Thumb_4.x, Thumb_4.y);
       angle = Mathf.Atan2(Thumb_0.x, Thumb_0.y) * Mathf.Rad2Deg;
@@ -144,10 +145,11 @@ public sealed class HandAnimator : MonoBehaviour
       preangle = angle;
             //steeringWheel.transform.eulerAngles = new Vector3(0, 0, -angle);
        // steeringWheel.transform.rotation = Quaternion.AngleAxis(-angle, new Vector3(0, 0, 1));
->>>>>>> Stashed changes
 
 
-      // GameObject testobject = Instantiate(collisionPrefab);
-      // testobject.transform.position = ptest;
+
+        // GameObject testobject = Instantiate(collisionPrefab);
+        // testobject.transform.position = ptest;
     }
+
 }
